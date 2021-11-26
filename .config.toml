@@ -1,0 +1,5 @@
+database = "karin"
+
+[collection]
+users = "users"
+events = "events"
