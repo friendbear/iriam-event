@@ -68,9 +68,9 @@ async fn main() -> Result<(), Box<dyn Error>> {
 
     let user_tuple = if find_result.is_some() {
         let user_json: serde_json::Value = Bson::from(find_result).into();
-        (user_json["name"].as_str().unwrap().to_string(), true)
+        (user_json["id"].as_str().unwrap().to_string(), true)
     } else {
-        (args[1].to_string(), false)
+        ("0000000000".to_string(), false)
     };
 
     println!("JSON: {}", user_tuple.0);

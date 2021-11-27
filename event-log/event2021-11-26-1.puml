@@ -1,0 +1,90 @@
+@startjson
+[{
+    "point": 2010,
+    "total": 56,
+    "summary": {
+        "name": "Kirito(キリト)⚔️",
+        "username": "Kirito__Otaku",
+        "twitter": true,
+        "day": "2021/11/26"
+    }
+},{
+    "point": 3100,
+    "total": 14,
+    "summary": {
+        "username": "No Twitter User",
+        "twitter": false,
+        "day": "2021/11/26"
+    }
+},
+{
+    "point": 1010,
+    "total": 3,
+    "summary": {
+        "name": "❄雪乃 さくら🌸9女立ち絵作成中",
+        "username": "Sakura_no_yuki_",
+        "twitter": true,
+        "day": "2021/11/26"
+    }
+},
+{
+    "point": 1000,
+    "total": 1,
+    "summary": {
+        "name": "kotokoto@ことりん",
+        "username": "kotokoto084",
+        "twitter": true,
+        "day": "2021/11/26"
+    }
+},
+{
+    "point": 500,
+    "total": 1,
+    "summary": {
+        "name": "桐己なよ🍠",
+        "username": "toukinayo",
+        "twitter": true,
+        "day": "2021/11/26"
+    }
+},
+{
+    "point": 1000,
+    "total": 1,
+    "summary": {
+        "name": "寿々華👓🐰🍴",
+        "username": "suzuka_mell",
+        "twitter": true,
+        "day": "2021/11/26"
+    }
+},
+{
+    "point": 500,
+    "total": 1,
+    "summary": {
+        "name": "やよ-yayo-",
+        "username": "yayo_ndnl",
+        "twitter": true,
+        "day": "2021/11/26"
+    }
+},
+{
+    "point": 500,
+    "total": 1,
+    "summary": {
+        "name": "さぶみらい",
+        "username": "sena7mirai",
+        "twitter": true,
+        "day": "2021/11/26"
+    }
+},
+{
+    "point": 500,
+    "total": 1,
+    "summary": {
+        "name": "Luce",
+        "username": "STR_Luce",
+        "twitter": true,
+        "day": "2021/11/26"
+    }
+}]
+@endjson
