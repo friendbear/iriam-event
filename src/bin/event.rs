@@ -10,6 +10,7 @@ use tokio::runtime::Runtime;
 use serde::{Deserialize, Serialize};
 use futures::stream::TryStreamExt;
 use mongodb::options::FindOptions;
+use structopt::StructOpt;
 use toml;
 
 #[derive(Deserialize)]
@@ -23,8 +24,50 @@ struct Collections {
     events: String,
 }
 
+
+fn true_or_false(s: &str) -> Result<bool, &'static str> {
+    match s {
+        "true" => Ok(true),
+        "false" => Ok(false),
+        _ => Err("expected `true` or `false`"),
+    }
+}
+
+#[derive(StructOpt, Debug)]
+#[structopt(name = "event", about = "Event management")]
+struct Opt {
+    #[structopt(subcommand)]
+    cmd: Command,
+    #[structopt(short, help = "verbose")]
+    verbose: bool,
+}
+#[derive(StructOpt, Debug)]
+enum Command {
+    Add {
+        name: String,
+        point: i32,
+//        #[structopt(parse(try_from_str = true_or_false))]
+//        twitter: bool,
+    }
+}
+
+async fn run(opt: Opt) -> Result<(), Box<dyn Error>> {
+   match opt.cmd {
+        Command::Add { name, point } => {
+            add(&name, point).await?;
+        }
+    }
+    Ok(())
+}
+
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {
+    let opt = Opt::from_args();
+    run(opt).await?;
+    Ok(())
+}
+
+async fn add(name: &str, point: i32) -> Result<(), Box<dyn Error>> {
 
     let config: Config = toml::from_str(r#"
         database = 'karin'
@@ -33,10 +76,6 @@ async fn main() -> Result<(), Box<dyn Error>> {
         users = "users"
         events = "events"
     "#).unwrap();
-
-    let args: Vec<String> = env::args().collect();
-
-    println!("{:?}", args);
 
     let client_url =
         env::var("MONGODB_URL").expect("You must set the MONGODB_URL environment var!");
@@ -49,7 +88,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
     let users = client.database(&config.database).collection::<Document>(&config.collections.users);
 
     let regex = Regex {
-        pattern: args[1].clone(),
+        pattern: name.to_string(),
         options: "g".to_string(),
     };
 
@@ -83,9 +122,8 @@ async fn main() -> Result<(), Box<dyn Error>> {
             doc! {
                 "event_id": 2,
                 "user_id": bson::to_bson(&name).unwrap_or_default(),
-                "point": bson::to_bson(&args[2].to_string().parse::<i32>().unwrap()).unwrap(),
-                "stars": bson::to_bson(&args[3].to_string().parse::<bool>().unwrap()).unwrap(),
-                "twitter": bson::to_bson(&twitter).unwrap_or_default(),
+                "point": bson::to_bson(&point).unwrap(),
+                "twitter": bson::to_bson(&twitter).unwrap(),
                 "created_at": bson_dt,
              },
             None,
