@@ -70,7 +70,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
 async fn add(name: &str, point: i32) -> Result<(), Box<dyn Error>> {
 
     let config: Config = toml::from_str(r#"
-        database = 'karin'
+        database = "churi"
 
         [collections]
         users = "users"
