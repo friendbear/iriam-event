@@ -1,0 +1,74 @@
+@startjson
+[{
+  "point": 590,
+  "total": 40,
+  "summary": {
+    "name": "Unlink Twitter",
+    "twitter": false,
+    "day": "2021/12/08"
+  }
+},{
+  "point": 500,
+  "total": 12,
+  "summary": {
+    "name": "あっきー🐾🌟",
+    "username": "H64VlD1kep1GWeJ",
+    "twitter": true,
+    "day": "2021/12/08"
+  }
+},{
+  "point": 440,
+  "total": 6,
+  "summary": {
+    "name": "bearsworld🧸 Software Engineer🇯🇵 🐻",
+    "username": "bearsworld22",
+    "twitter": true,
+    "day": "2021/12/08"
+  }
+},{
+  "point": 1220,
+  "total": 5,
+  "summary": {
+    "name": "🔆おひさまふれあ🔆Minecraft",
+    "username": "Flare_Ohisama",
+    "twitter": true,
+    "day": "2021/12/08"
+  }
+},{
+  "point": 20,
+  "total": 2,
+  "summary": {
+    "name": "おにいちゃん（サタエモン）",
+    "username": "sataemon",
+    "twitter": true,
+    "day": "2021/12/08"
+  }
+},{
+  "point": 500,
+  "total": 1,
+  "summary": {
+    "name": "リュシュ",
+    "username": "ryu_syu_",
+    "twitter": true,
+    "day": "2021/12/08"
+  }
+},{
+  "point": 10,
+  "total": 1,
+  "summary": {
+    "name": "雪月六花",
+    "username": "yudukirikka",
+    "twitter": true,
+    "day": "2021/12/08"
+  }
+},{
+  "point": 1000,
+  "total": 1,
+  "summary": {
+    "name": "[仮]@はむ",
+    "username": "goodReaperM27",
+    "twitter": true,
+    "day": "2021/12/08"
+  }
+}]
+@endjson
